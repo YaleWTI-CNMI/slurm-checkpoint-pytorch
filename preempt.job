@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH -p gpu_test -q qos_lafferty
+#SBATCH --gres=gpu:h100:1
+#SBATCH -n 1 --ntasks-per-node=1 
+
+date
+echo "preempt a job"
+sleep 60

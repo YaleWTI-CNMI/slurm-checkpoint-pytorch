@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH -p gpu_test -q qos_test
+#SBATCH --time=1:00:00
+#SBATCH --gres=gpu:h100:1
+#SBATCH -n 1 --ntasks-per-node=1 
+
+module load miniconda
+conda activate torch_2.4
+export PYTHONPATH=$(pwd)/CPL
+srun python simple.py 
